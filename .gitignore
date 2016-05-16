@@ -1,0 +1,10 @@
+# VS output directorys
+/SHA256Checker/bin
+/SHA256Checker/obj
+
+# VS suo file
+*.suo
+/.vs
+
+# Vim swap file
+*.swp
