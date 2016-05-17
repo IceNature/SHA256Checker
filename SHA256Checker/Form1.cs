@@ -43,7 +43,15 @@ namespace SHA256Checker
                 MessageBox.Show(string.Format("找不到文件 {0}!", textBoxFile.Text), "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            source = new FileStream(textBoxFile.Text, FileMode.Open, FileAccess.Read);
+            try
+            {
+                source = new FileStream(textBoxFile.Text, FileMode.Open, FileAccess.Read);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             buttonRun.Enabled = false;
             buttonBrowse.Enabled = false;
             buttonStop.Enabled = true;
