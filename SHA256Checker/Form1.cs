@@ -15,7 +15,6 @@ namespace SHA256Checker
 {
     public partial class Form1 : Form
     {
-        private delegate void callBackFunc(HashCheckerCompleteEventArgs result);
         private FileStream source;
         private SHA256Checker checker;
 
@@ -56,7 +55,7 @@ namespace SHA256Checker
 
         public void CheckerCallBack(object sender, HashCheckerCompleteEventArgs e)
         {
-            BeginInvoke(new callBackFunc(checkerCallBackCore), new object[] { e });
+            BeginInvoke(new Action<HashCheckerCompleteEventArgs>(checkerCallBackCore), new object[] { e });
         }
 
         private void checkerCallBackCore(HashCheckerCompleteEventArgs result)
