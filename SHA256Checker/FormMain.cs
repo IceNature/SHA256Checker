@@ -17,10 +17,12 @@ namespace SHA256Checker
     {
         private FileStream source;
         private SHA256Checker checker;
+        public List<HashCheckerCompleteEventArgs> checkSum;
 
         public FormMain()
         {
             InitializeComponent();
+            checkSum = new List<HashCheckerCompleteEventArgs>();
         }
 
         private void textBoxFile_TextChanged(object sender, EventArgs e)
@@ -74,6 +76,7 @@ namespace SHA256Checker
 
             if (result != null)
             {
+                checkSum.Add(result);
                 StringBuilder resultStr = new StringBuilder();
                 resultStr.Append("文件：");
                 resultStr.Append(result.FilePath);
@@ -94,6 +97,40 @@ namespace SHA256Checker
         private void buttonStop_Click(object sender, EventArgs e)
         {
             checker.Stop();
+        }
+
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+            foreach (var m in checkSum)
+            {
+                if (m.SHA256Sum.Equals(textBoxSum.Text.Trim(), StringComparison.OrdinalIgnoreCase))
+                {
+                    StringBuilder resultStr = new StringBuilder();
+                    resultStr.Append("文件：");
+                    resultStr.Append(m.FilePath);
+                    resultStr.Append("\r\n");
+                    resultStr.Append("创建日期：");
+                    resultStr.Append(m.CreateDate);
+                    resultStr.Append("\r\n");
+                    resultStr.Append("修改日期：");
+                    resultStr.Append(m.ChangeDate);
+                    resultStr.Append("\r\n");
+                    resultStr.Append("SHA256：");
+                    resultStr.Append(m.SHA256Sum);
+                    resultStr.Append("\r\n\r\n");
+                    this.textBoxSearchResult.Text = resultStr.ToString();
+                    return;
+                }
+            }
+            this.textBoxSearchResult.Text = "未找到！";
+        }
+
+        private void textBoxSum_TextChanged(object sender, EventArgs e)
+        {
+            if (textBoxSum.Text != "" && checkSum.Count != 0)
+                buttonSearch.Enabled = true;
+            else
+                buttonSearch.Enabled = false;
         }
     }
 }
