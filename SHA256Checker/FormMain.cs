@@ -27,6 +27,8 @@ namespace SHA256Checker
         {
             if (textBoxFile.Text != "")
                 buttonRun.Enabled = true;
+            else
+                buttonRun.Enabled = false;
         }
 
         private void buttonBrowse_Click(object sender, EventArgs e)
