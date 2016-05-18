@@ -13,12 +13,12 @@ using System.Timers;
 
 namespace SHA256Checker
 {
-    public partial class Form1 : Form
+    public partial class FormMain : Form
     {
         private FileStream source;
         private SHA256Checker checker;
 
-        public Form1()
+        public FormMain()
         {
             InitializeComponent();
         }
