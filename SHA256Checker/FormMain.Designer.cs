@@ -37,10 +37,10 @@
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.groupBoxCheck = new System.Windows.Forms.GroupBox();
             this.groupBoxSearch = new System.Windows.Forms.GroupBox();
-            this.textBoxSum = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.buttonSearch = new System.Windows.Forms.Button();
             this.textBoxSearchResult = new System.Windows.Forms.TextBox();
+            this.buttonSearch = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBoxSum = new System.Windows.Forms.TextBox();
             this.groupBoxCheck.SuspendLayout();
             this.groupBoxSearch.SuspendLayout();
             this.SuspendLayout();
@@ -58,13 +58,13 @@
             // 
             this.textBoxFile.Location = new System.Drawing.Point(55, 20);
             this.textBoxFile.Name = "textBoxFile";
-            this.textBoxFile.Size = new System.Drawing.Size(382, 21);
+            this.textBoxFile.Size = new System.Drawing.Size(328, 21);
             this.textBoxFile.TabIndex = 1;
             this.textBoxFile.TextChanged += new System.EventHandler(this.textBoxFile_TextChanged);
             // 
             // buttonBrowse
             // 
-            this.buttonBrowse.Location = new System.Drawing.Point(443, 18);
+            this.buttonBrowse.Location = new System.Drawing.Point(389, 18);
             this.buttonBrowse.Name = "buttonBrowse";
             this.buttonBrowse.Size = new System.Drawing.Size(75, 23);
             this.buttonBrowse.TabIndex = 2;
@@ -78,7 +78,7 @@
             this.textBoxResult.Multiline = true;
             this.textBoxResult.Name = "textBoxResult";
             this.textBoxResult.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxResult.Size = new System.Drawing.Size(508, 138);
+            this.textBoxResult.Size = new System.Drawing.Size(454, 138);
             this.textBoxResult.TabIndex = 0;
             // 
             // buttonRun
@@ -107,7 +107,7 @@
             // 
             this.progressBar1.Location = new System.Drawing.Point(172, 191);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(346, 23);
+            this.progressBar1.Size = new System.Drawing.Size(292, 23);
             this.progressBar1.TabIndex = 5;
             // 
             // groupBoxCheck
@@ -121,7 +121,7 @@
             this.groupBoxCheck.Controls.Add(this.textBoxResult);
             this.groupBoxCheck.Location = new System.Drawing.Point(12, 12);
             this.groupBoxCheck.Name = "groupBoxCheck";
-            this.groupBoxCheck.Size = new System.Drawing.Size(524, 227);
+            this.groupBoxCheck.Size = new System.Drawing.Size(470, 227);
             this.groupBoxCheck.TabIndex = 6;
             this.groupBoxCheck.TabStop = false;
             this.groupBoxCheck.Text = "校验";
@@ -134,18 +134,32 @@
             this.groupBoxSearch.Controls.Add(this.textBoxSum);
             this.groupBoxSearch.Location = new System.Drawing.Point(12, 245);
             this.groupBoxSearch.Name = "groupBoxSearch";
-            this.groupBoxSearch.Size = new System.Drawing.Size(524, 180);
+            this.groupBoxSearch.Size = new System.Drawing.Size(470, 180);
             this.groupBoxSearch.TabIndex = 7;
             this.groupBoxSearch.TabStop = false;
             this.groupBoxSearch.Text = "搜索";
             // 
-            // textBoxSum
+            // textBoxSearchResult
             // 
-            this.textBoxSum.Location = new System.Drawing.Point(67, 20);
-            this.textBoxSum.Name = "textBoxSum";
-            this.textBoxSum.Size = new System.Drawing.Size(370, 21);
-            this.textBoxSum.TabIndex = 0;
-            this.textBoxSum.TextChanged += new System.EventHandler(this.textBoxSum_TextChanged);
+            this.textBoxSearchResult.BackColor = System.Drawing.SystemColors.Window;
+            this.textBoxSearchResult.Location = new System.Drawing.Point(6, 47);
+            this.textBoxSearchResult.Multiline = true;
+            this.textBoxSearchResult.Name = "textBoxSearchResult";
+            this.textBoxSearchResult.ReadOnly = true;
+            this.textBoxSearchResult.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxSearchResult.Size = new System.Drawing.Size(458, 127);
+            this.textBoxSearchResult.TabIndex = 3;
+            // 
+            // buttonSearch
+            // 
+            this.buttonSearch.Enabled = false;
+            this.buttonSearch.Location = new System.Drawing.Point(389, 18);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.Size = new System.Drawing.Size(75, 23);
+            this.buttonSearch.TabIndex = 2;
+            this.buttonSearch.Text = "搜索(&S)";
+            this.buttonSearch.UseVisualStyleBackColor = true;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
             // 
             // label2
             // 
@@ -156,33 +170,19 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "校验和：";
             // 
-            // buttonSearch
+            // textBoxSum
             // 
-            this.buttonSearch.Enabled = false;
-            this.buttonSearch.Location = new System.Drawing.Point(443, 18);
-            this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(75, 23);
-            this.buttonSearch.TabIndex = 2;
-            this.buttonSearch.Text = "搜索(&S)";
-            this.buttonSearch.UseVisualStyleBackColor = true;
-            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
-            // 
-            // textBoxSearchResult
-            // 
-            this.textBoxSearchResult.BackColor = System.Drawing.SystemColors.Window;
-            this.textBoxSearchResult.Location = new System.Drawing.Point(6, 47);
-            this.textBoxSearchResult.Multiline = true;
-            this.textBoxSearchResult.Name = "textBoxSearchResult";
-            this.textBoxSearchResult.ReadOnly = true;
-            this.textBoxSearchResult.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxSearchResult.Size = new System.Drawing.Size(512, 127);
-            this.textBoxSearchResult.TabIndex = 3;
+            this.textBoxSum.Location = new System.Drawing.Point(67, 20);
+            this.textBoxSum.Name = "textBoxSum";
+            this.textBoxSum.Size = new System.Drawing.Size(316, 21);
+            this.textBoxSum.TabIndex = 0;
+            this.textBoxSum.TextChanged += new System.EventHandler(this.textBoxSum_TextChanged);
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(548, 431);
+            this.ClientSize = new System.Drawing.Size(494, 431);
             this.Controls.Add(this.groupBoxSearch);
             this.Controls.Add(this.groupBoxCheck);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
