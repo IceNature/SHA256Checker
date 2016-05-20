@@ -172,6 +172,7 @@
             // 
             // textBoxSum
             // 
+            this.textBoxSum.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxSum.Location = new System.Drawing.Point(67, 20);
             this.textBoxSum.Name = "textBoxSum";
             this.textBoxSum.Size = new System.Drawing.Size(316, 21);
