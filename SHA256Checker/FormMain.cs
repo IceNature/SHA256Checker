@@ -119,10 +119,14 @@ namespace SHA256Checker
                     resultStr.Append(m.SHA256Sum);
                     resultStr.Append("\r\n\r\n");
                     this.textBoxSearchResult.Text = resultStr.ToString();
+                    textBoxSum.BackColor = Color.Green;
+                    textBoxSum.ForeColor = Color.White;
                     return;
                 }
             }
             this.textBoxSearchResult.Text = "未找到！";
+            textBoxSum.BackColor = Color.Red;
+            textBoxSum.ForeColor = Color.White;
         }
 
         private void textBoxSum_TextChanged(object sender, EventArgs e)
@@ -131,6 +135,8 @@ namespace SHA256Checker
                 buttonSearch.Enabled = true;
             else
                 buttonSearch.Enabled = false;
+            textBoxSum.BackColor = System.Drawing.SystemColors.Window;
+            textBoxSum.ForeColor = System.Drawing.SystemColors.WindowText;
         }
     }
 }
