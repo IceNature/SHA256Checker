@@ -1,0 +1,3 @@
+language: csharp
+solution: SHA256Checker.sln
+sudo: true
