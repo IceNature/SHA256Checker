@@ -1,7 +1,7 @@
-# SHA256 校验工具
+# SHA256 Checker
 
 [![Build Status](https://travis-ci.org/IceNature/SHA256Checker.svg?branch=master)](https://travis-ci.org/IceNature/SHA256Checker)
 
-## 运行环境：
+## Runtime：
 * .NET Framework 4.0+
 * Windows 7+
